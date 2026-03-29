@@ -198,15 +198,27 @@ h3 {
   .container {
     padding: 0 20px;
   }
-  .sc_tit {
-    margin-bottom: 12px;
-  }
   .sc_tit h2 {
-    font-size: 26px;
-    letter-spacing: 0.1px;
+    font-size: 22px;
   }
   h3 {
-    font-size: 24px;
+    font-size: 18px;
+  }
+  p {
+    font-size: 14px;
+  }
+  .cta .bttn {
+    letter-spacing: 4px;
+    padding: 24px 60px;
+    border: 2px solid transparent;
+    border-radius: 0;
+    transition: all 0.4s ease;
+  }
+  .cta .bttn:hover {
+    background-color: transparent;
+    color: #3B82F6;
+    border: 2px solid #3B82F6;
+    border-radius: 100px;
   }
 }
 .fix_aside {
@@ -948,6 +960,7 @@ header .kv .bg .solid_4 {
 
 @media (max-width: 768px) {
   nav {
+    top: 0%;
     height: 35px;
   }
   nav .nav_area {
@@ -1049,6 +1062,47 @@ header .kv .bg .solid_4 {
   header .kv .inner .bg {
     transform: scale(1.25);
     bottom: -10%;
+  }
+  .sc_aboutMe {
+    padding: 36px 0;
+  }
+  .sc_aboutMe_cnt {
+    margin-bottom: 72px;
+  }
+  .sc_aboutMe_cnt p {
+    font-size: 18px;
+  }
+  .sc_aboutMe_skill {
+    display: flex;
+    justify-content: space-between;
+  }
+  .sc_aboutMe_skill .item {
+    position: relative;
+    background-color: #fff;
+    border: 1px solid #F3F7FA;
+    width: 32%;
+    padding: 72px 18px 18px;
+    border-radius: 8px;
+  }
+  .sc_aboutMe_skill .item .pic {
+    position: absolute;
+    z-index: 1;
+    top: -36px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+    background-color: #3B82F6;
+    border-radius: 1000px;
+    padding: 24px;
+  }
+  .sc_aboutMe_skill .item h3 {
+    color: #3B82F6;
+    margin-bottom: 10px;
+  }
+  .sc_aboutMe_skill .item .wording {
+    margin-left: 1.25rem;
+    color: #6B7280;
+    line-height: 1.75;
   }
   .sc_class {
     padding-bottom: 40px;

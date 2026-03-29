@@ -86,6 +86,33 @@ function setScrollPage() {
 }
 
 
+function init() {
+
+  // DIGITIMES 個資蒐集聲明
+
+  $('.pr_box-tit').data('_isOpen', false);
+  $('.pr_box-tit').on('click', function () {
+    let _isOpen = $(this).data('_isOpen');
+    console.log('_isOpen:', _isOpen);
+
+    if (_isOpen) {
+      $('.pr_box-tit').data('_isOpen', false);
+      $('.pr_box-cnt').slideUp();
+      $('.pr_box-tit .arr').css('transform', 'rotate(180deg)');
+
+    } else {
+      $('.pr_box-tit').data('_isOpen', true);
+      $('.pr_box-cnt').slideDown();
+      $('.pr_box-tit .arr').css('transform', 'rotate(0deg)');
+
+    }
+  });
+
+  //
+
+
+}
+
 //----------------------------------------NAV
 
 var isNavOpen = false;
@@ -153,73 +180,73 @@ function setMobileNavClose() {
 
 // -----------------------------------------------------------DateFormat
 
-// function DateFormat() {
-//   return new DateFormat.prototype.init();
-// }
-// DateFormat.fn = DateFormat.prototype = {
-//   _default: {
-//     formatFn: function (date, pattern) {
-//       date = date || 0;
-//       pattern = pattern.length;
-//       return pattern === 1 ? date : (Math.pow(10, pattern) + date + '').slice(-pattern);
-//     },
-//     formatMap: {
-//       Y: function (d, f) {
-//         return DateFormat.fn._default.formatFn(d.getFullYear(), f);
-//       },
-//       M: function (d, f) {
-//         return DateFormat.fn._default.formatFn(d.getMonth() + 1, f);
-//       },
-//       D: function (d, f) {
-//         return DateFormat.fn._default.formatFn(d.getDate(), f);
-//       },
-//       h: function (d, f) {
-//         return DateFormat.fn._default.formatFn(d.getHours(), f);
-//       },
-//       m: function (d, f) {
-//         return DateFormat.fn._default.formatFn(d.getMinutes(), f);
-//       },
-//       s: function (d, f) {
-//         return DateFormat.fn._default.formatFn(d.getSeconds(), f);
-//       },
-//       w: function (d, f) {
-//         return d.getDay();
-//       }
-//     },
-//   },
-//   // 初始化
-//   init: function () {
-//     return this;
-//   },
-//   // 配置
-//   config: function (config) {
-//     for (var name in config) {
-//       this._default[name] = config[name];
-//     }
-//     return this;
-//   },
-//   // 格式化
-//   format: function (date, pattern) {
+function DateFormat() {
+  return new DateFormat.prototype.init();
+}
+DateFormat.fn = DateFormat.prototype = {
+  _default: {
+    formatFn: function (date, pattern) {
+      date = date || 0;
+      pattern = pattern.length;
+      return pattern === 1 ? date : (Math.pow(10, pattern) + date + '').slice(-pattern);
+    },
+    formatMap: {
+      Y: function (d, f) {
+        return DateFormat.fn._default.formatFn(d.getFullYear(), f);
+      },
+      M: function (d, f) {
+        return DateFormat.fn._default.formatFn(d.getMonth() + 1, f);
+      },
+      D: function (d, f) {
+        return DateFormat.fn._default.formatFn(d.getDate(), f);
+      },
+      h: function (d, f) {
+        return DateFormat.fn._default.formatFn(d.getHours(), f);
+      },
+      m: function (d, f) {
+        return DateFormat.fn._default.formatFn(d.getMinutes(), f);
+      },
+      s: function (d, f) {
+        return DateFormat.fn._default.formatFn(d.getSeconds(), f);
+      },
+      w: function (d, f) {
+        return d.getDay();
+      }
+    },
+  },
+  // 初始化
+  init: function () {
+    return this;
+  },
+  // 配置
+  config: function (config) {
+    for (var name in config) {
+      this._default[name] = config[name];
+    }
+    return this;
+  },
+  // 格式化
+  format: function (date, pattern) {
 
-//     date = new Date(date);
+    date = new Date(date);
 
-//     if (/Invalid/i.test(date + '')) {
-//       console.error('请提供一个合法日期！');
-//       return;
-//     }
+    if (/Invalid/i.test(date + '')) {
+      console.error('请提供一个合法日期！');
+      return;
+    }
 
-//     var _self = this,
-//       char = '';
+    var _self = this,
+      char = '';
 
-//     return pattern.replace(/([YMDhsmw])\1*/g,
-//       function (format) {
-//         char = format.charAt();
-//         return _self._default.formatMap[char] ? _self._default.formatMap[char](date, format) : '';
-//       });
-//   }
-// };
+    return pattern.replace(/([YMDhsmw])\1*/g,
+      function (format) {
+        char = format.charAt();
+        return _self._default.formatMap[char] ? _self._default.formatMap[char](date, format) : '';
+      });
+  }
+};
 
-// DateFormat.fn.init.prototype = DateFormat.fn;
+DateFormat.fn.init.prototype = DateFormat.fn;
 
 
 // ========================
