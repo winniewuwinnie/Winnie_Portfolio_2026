@@ -156,7 +156,6 @@ p {
 
 .wrap {
   font-family: "Manrope", "Noto Sans TC", "Microsoft Jhenghei", "微軟正黑", sans-serif;
-  overflow: hidden;
   background-color: #fff;
 }
 
@@ -200,25 +199,14 @@ h3 {
   }
   .sc_tit h2 {
     font-size: 22px;
+    text-align: center;
   }
   h3 {
     font-size: 18px;
   }
-  p {
-    font-size: 14px;
-  }
   .cta .bttn {
     letter-spacing: 4px;
-    padding: 24px 60px;
-    border: 2px solid transparent;
-    border-radius: 0;
-    transition: all 0.4s ease;
-  }
-  .cta .bttn:hover {
-    background-color: transparent;
-    color: #3B82F6;
-    border: 2px solid #3B82F6;
-    border-radius: 100px;
+    padding: 24px 40px;
   }
 }
 .fix_aside {
@@ -535,7 +523,7 @@ header .kv .bg .solid_4 {
 }
 .sc_projects_cnt a {
   display: inline-block;
-  border-radius: 16px;
+  border-radius: 8px;
   overflow: hidden;
   transition: all 0.3s ease-in-out;
 }
@@ -635,18 +623,18 @@ header .kv .bg .solid_4 {
 }
 .sc_projects_cnt .slick-dots .slick-active li {
   height: 80px;
-  border-radius: 1rem;
+  border-radius: 8px;
 }
 .sc_projects_cnt .slick-dots .slick-active button {
   background-color: white;
   height: 80px;
-  border-radius: 1rem;
+  border-radius: 8px;
 }
 .sc_projects_cnt .slick-dots .slick-active button::before {
   height: 80px;
 }
 .sc_projects_cnt .slick-dotted.slick-slider {
-  margin-bottom: 0 !important;
+  margin-bottom: 0;
 }
 .sc_projects_cnt .slick-arrow {
   position: absolute;
@@ -767,11 +755,9 @@ header .kv .bg .solid_4 {
 .sc_experience_cnt::after {
   content: "";
   position: absolute;
-  left: 6px;
-  top: 6px;
-  /* 對齊第一個 dot 中心 */
-  bottom: 6px;
-  /* 對齊最後一個 dot 中心 */
+  left: 0;
+  top: 10px;
+  bottom: 10px;
   width: 0.5px;
   background-color: #000;
 }
@@ -784,16 +770,18 @@ header .kv .bg .solid_4 {
 }
 .sc_experience_cnt .item {
   display: flex;
-  align-items: center;
 }
 .sc_experience_cnt .dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 100px;
+  width: 20px;
+  height: 20px;
+  clip-path: polygon(80% 50%, 0 0, 0 100%);
   background-color: #000;
   position: relative;
   z-index: 2;
   /* 蓋在線上面 */
+}
+.sc_experience_cnt .wording {
+  display: flex;
 }
 .sc_experience_cnt .time {
   font-weight: 500;
@@ -812,18 +800,6 @@ header .kv .bg .solid_4 {
   position: relative;
   color: #6B7280;
   line-height: 1.75;
-  list-style: none;
-}
-.sc_experience_cnt .info li::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: -28px;
-  width: 10px;
-  height: 10px;
-  clip-path: polygon(75% 50%, 0 0, 0 100%);
-  background-color: #6B7280;
 }
 
 .sc_contact {
@@ -878,7 +854,7 @@ header .kv .bg .solid_4 {
   margin-bottom: 6px;
 }
 .sc_contact_links .item .text {
-  font-size: 20px;
+  font-size: 18px;
   color: #000;
   font-weight: 400;
   line-height: 1;
@@ -969,7 +945,7 @@ header .kv .bg .solid_4 {
     right: -100%;
     width: 100%;
     height: 100vh;
-    background-color: #000;
+    background-color: #fff;
     flex-direction: column;
     justify-content: center;
   }
@@ -993,7 +969,7 @@ header .kv .bg .solid_4 {
     position: relative;
     width: 100%;
     height: auto;
-    padding: 15px 0;
+    padding: 10px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1050,236 +1026,218 @@ header .kv .bg .solid_4 {
     transform: translateY(0);
   }
   header {
-    height: 50vw;
+    height: 75vw;
     margin-top: 0;
   }
   header .kv .inner {
-    height: 50vw;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -40%);
   }
-  header .kv .inner .leaf {
-    top: 25%;
+  header .kv .inner .t1 {
+    font-size: 26px;
+    margin-bottom: 10px;
   }
-  header .kv .inner .bg {
-    transform: scale(1.25);
-    bottom: -10%;
+  header .kv .inner .t2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  header .kv .inner .t3 {
+    font-size: 12px;
+    margin-bottom: 16px;
   }
   .sc_aboutMe {
-    padding: 36px 0;
+    padding: 48px 0;
   }
   .sc_aboutMe_cnt {
     margin-bottom: 72px;
   }
   .sc_aboutMe_cnt p {
-    font-size: 18px;
+    font-size: 16px;
   }
   .sc_aboutMe_skill {
-    display: flex;
-    justify-content: space-between;
+    flex-direction: column;
   }
   .sc_aboutMe_skill .item {
-    position: relative;
-    background-color: #fff;
-    border: 1px solid #F3F7FA;
-    width: 32%;
-    padding: 72px 18px 18px;
-    border-radius: 8px;
+    width: 100%;
+    padding: 50px 18px 18px;
+    margin-bottom: 52px;
+  }
+  .sc_aboutMe_skill .item:last-child {
+    margin-bottom: 0;
   }
   .sc_aboutMe_skill .item .pic {
-    position: absolute;
-    z-index: 1;
-    top: -36px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: inline-block;
-    background-color: #3B82F6;
-    border-radius: 1000px;
-    padding: 24px;
+    padding: 16px;
   }
-  .sc_aboutMe_skill .item h3 {
-    color: #3B82F6;
-    margin-bottom: 10px;
+  .sc_projects {
+    padding: 48px 0;
   }
-  .sc_aboutMe_skill .item .wording {
-    margin-left: 1.25rem;
-    color: #6B7280;
-    line-height: 1.75;
-  }
-  .sc_class {
-    padding-bottom: 40px;
-  }
-  .sc_class .class-slick {
-    height: auto;
-  }
-  .sc_class .slick-slide {
-    height: auto;
-  }
-  .sc_class .slider {
-    margin-bottom: 100px;
-  }
-  .sc_class .slick-list {
-    position: relative;
-    overflow: hidden;
-    height: 100vh;
-  }
-  .sc_class .slick-slide {
-    margin: 0px 10px;
-    width: 100%;
-  }
-  .sc_class .slick-slide img {
-    width: 100%;
-  }
-  .sc_class .slick-prev:before,
-  .sc_class .slick-next:before {
-    color: black;
-  }
-  .sc_class .slick-slide {
-    transition: all ease-in-out 0.3s;
-    margin: 0 16px;
-  }
-  .sc_class .slick-active {
-    opacity: 1;
-  }
-  .sc_class .slick-current {
-    opacity: 1;
-  }
-  .sc_class .slider {
-    position: relative;
-    width: 100%;
-  }
-  .sc_class .slick {
-    position: relative;
-    overflow: visible;
-  }
-  .sc_class .slick .item {
-    float: left;
-    text-align: center;
-  }
-  .sc_class .slick .item img {
-    display: block;
-    margin: 0 auto;
-  }
-  .sc_class .slick-no-slide .slick-track {
-    width: 100% !important;
-    text-align: center;
-    transform: inherit !important;
-  }
-  .sc_class .slick-no-slide .slick-slide {
-    float: none;
-    display: inline-block;
-  }
-  .sc_class .slick-dots {
-    bottom: -40px;
-    position: absolute;
-    z-index: 2;
-    top: 50%;
-    right: 50%;
-    width: auto;
-    transform: translate(-150%, 50%) rotate(90deg);
-  }
-  .sc_class .slick-dots li {
-    display: block;
-    width: 12px;
-    height: 12px;
-    margin: 0 0 20px 0;
-  }
-  .sc_class .slick-dots li button {
-    display: block;
-    width: 12px;
-    height: 12px;
-    font-size: 0;
-    background-color: rgba(255, 255, 255, 0.75);
-    border-radius: 50%;
-    border: none;
-  }
-  .sc_class .slick-dots li button::before {
-    content: "";
-    width: 12px;
-    height: 12px;
-  }
-  .sc_class .slick-dots .slick-active {
-    height: 80px;
-  }
-  .sc_class .slick-dots .slick-active li {
-    height: 80px;
-    border-radius: 1rem;
-  }
-  .sc_class .slick-dots .slick-active button {
-    background-color: white;
-    height: 80px;
-    border-radius: 1rem;
-  }
-  .sc_class .slick-dots .slick-active button::before {
-    height: 80px;
-  }
-  .sc_class .item {
+  .sc_projects .container {
     flex-direction: column;
   }
-  .sc_class .item .pic {
-    width: 100%;
-    transform: translateX(0px);
+  .sc_projects .sc_tit {
+    padding: 0px 0 0;
+    margin-right: 0;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .sc_projects .sc_tit h2 {
     margin-bottom: 16px;
   }
-  .sc_class .item .subtit {
-    font-size: 18px;
-    font-weight: 500;
-    margin-bottom: 12px;
-    letter-spacing: 0;
+  .sc_projects .sc_tit h3 {
+    font-size: 14px;
+    margin-bottom: 20px;
+    text-align: center;
   }
-  .sc_class .item .text {
-    letter-spacing: 0;
-    margin-bottom: 0.75rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 8;
-    -webkit-box-orient: vertical;
+  .sc_projects .sc_tit .cta {
+    display: flex;
+    justify-content: center;
   }
-  .sc_class .item .bttns {
+  .sc_projects_cnt {
     flex-direction: column;
   }
-  .sc_class .item .bttn {
-    letter-spacing: 2px;
-    margin: 0 0 0.75rem 0;
-    height: 50px;
+  .sc_projects_cnt .slick {
+    margin-top: 0px;
+    margin-bottom: 1rem;
   }
-  .sc_class .item .bttn img {
-    max-width: 50px;
+  .sc_projects_cnt .slick.slick_L .slick-list .slick-track {
+    margin-top: 0px;
+    width: 100%;
+  }
+  .sc_projects_cnt .slick.slick_R .slick-list .slick-track {
+    margin-top: 0px;
+    width: 100%;
+  }
+  .sc_projects_cnt {
+    /* ✅ 高度自適應 */
+  }
+  .sc_projects_cnt .slick-list {
+    height: auto !important;
+  }
+  .sc_projects_cnt {
+    /* ✅ 改成橫向滑動 */
+  }
+  .sc_projects_cnt .slider {
+    width: 100%;
+  }
+  .sc_projects_cnt .slick-slide {
+    margin: 0 8px;
+  }
+  .sc_projects_cnt .slick-slide img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  .sc_projects_cnt {
+    /* ✅ 圖片大小優化 */
+  }
+  .sc_projects_cnt .slick .item img {
+    max-width: 100%;
+  }
+  .sc_projects_cnt .slick-dotted.slick-slider {
+    margin-bottom: 1rem;
+  }
+  .sc_clients {
+    padding: 48px 0;
+  }
+  .sc_clients .sc_tit {
+    margin-bottom: 30px;
+  }
+  .sc_experience {
+    padding: 48px 0;
+  }
+  .sc_experience .sc_tit {
+    margin-bottom: 32px;
+  }
+  .sc_experience_cnt .work {
+    margin-bottom: 30px;
+  }
+  .sc_experience_cnt .item {
+    align-items: flex-start;
+  }
+  .sc_experience_cnt .dot {
+    width: 18px;
+    height: 18px;
+  }
+  .sc_experience_cnt .wording {
+    flex-direction: column;
+  }
+  .sc_experience_cnt .time {
+    margin: 0 0 10px 18px;
+  }
+  .sc_experience_cnt .position {
+    font-size: 18px;
+    margin-left: 180x;
+    line-height: 1.5;
+  }
+  .sc_experience_cnt .info {
+    padding: 18px 18px 18px 48px;
+  }
+  .sc_contact {
+    padding: 48px 0;
+  }
+  .sc_contact .container {
+    flex-direction: column;
+  }
+  .sc_contact_cnt {
+    width: 100%;
+    padding-right: 0%;
+    margin-bottom: 36px;
+  }
+  .sc_contact_cnt .sc_tit {
+    margin-bottom: 24px;
+  }
+  .sc_contact_cnt p {
+    margin-bottom: 16px;
+  }
+  .sc_contact_links {
+    width: 100%;
+  }
+  .sc_contact_links .item {
+    display: flex;
+    margin-bottom: 24px;
+  }
+  .sc_contact_links .item:last-child {
+    margin-bottom: 0;
   }
   .sc_footer {
-    padding: 35px 0 65px 0;
-  }
-  .sc_footer img {
-    margin: 0 auto 8px auto;
-  }
-  .frame-box-outer .frame-box .frame-box-inner iframe {
-    width: 300px;
-    height: 200px;
-  }
-  .frame-box-outer .frame-box .frame-box-inner .close {
-    width: 15px;
-    height: 15px;
-  }
-  .frame-box-outer .frame-box .frame-box-inner .close .line {
-    width: 15px;
+    padding: 68px 0;
   }
 }
+header .kv .inner .t2.t2_projects {
+  margin-bottom: 1.25rem;
+}
+header .kv .inner .t2.t2_projects p {
+  font-weight: 300;
+  line-height: 1.75;
+}
+
 .projects {
   position: relative;
   z-index: 1;
-  transform: translateY(-20vh);
+  margin-top: -20vh;
 }
 .projects .sc_list {
   position: relative;
+  padding: 48px 0;
+}
+.projects .sc_list .sticky {
+  position: sticky;
+  top: 60px;
+  z-index: 10;
 }
 .projects .sc_list_dropdown {
   display: flex;
   margin-bottom: 24px;
+  gap: 12px;
 }
 .projects .sc_list_dropdown .dropdown_bttn {
-  background-color: transparent;
+  background-color: #fff;
   border: 1px solid #000;
   border-radius: 100px;
-  margin-right: 18px;
+  margin-right: 8px;
   font-size: 20px;
   font-weight: 700;
   padding: 10px 20px;
@@ -1290,21 +1248,44 @@ header .kv .bg .solid_4 {
   background-color: #000;
   color: #fff;
 }
+.projects .sc_list_dropdown .dropdown-menu {
+  background-color: transparent;
+  padding: 0;
+  border: 0px solid transparent;
+}
+.projects .sc_list_dropdown .dropdown-item {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 100px;
+  border: 1px solid #E2E8F0;
+  margin: 0.25rem 0;
+  cursor: pointer;
+}
+.projects .sc_list_dropdown .dropdown-item:hover {
+  background-color: #E2E8F0;
+}
 .projects .sc_list_breadcrumb {
-  margin-bottom: 32px;
+  margin-bottom: 60px;
 }
 .projects .sc_list_breadcrumb nav {
-  position: absolute;
-  top: auto;
+  position: static;
 }
-.projects .sc_list .sc_list_projects {
+.projects .sc_list_breadcrumb .breadcrumb {
+  margin: 12px 0 48px 0;
+  font-weight: bold;
+  padding: 0px 20px;
+}
+.projects .sc_list_breadcrumb .breadcrumb span {
+  pointer-events: none;
+}
+.projects .sc_list_projects {
   -moz-column-count: 3;
        column-count: 3;
   -moz-column-gap: 16px;
        column-gap: 16px;
   /* 過渡效果 */
 }
-.projects .sc_list .sc_list_projects .item {
+.projects .sc_list_projects .item {
   -moz-column-break-inside: avoid;
        break-inside: avoid;
   margin-bottom: 16px;
@@ -1312,38 +1293,39 @@ header .kv .bg .solid_4 {
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease;
   opacity: 1;
+  border-radius: 8px;
+  overflow: hidden;
 }
-.projects .sc_list {
-  /* 隱藏時淡出 */
+.projects .sc_list_projects .item:hover {
+  transform: scale(0.95);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
-.projects .sc_list .sc_list_projects .item.hidden {
+.projects .sc_list_projects .item.hidden {
   opacity: 0;
   transform: scale(0.95);
   pointer-events: none;
 }
-.projects .sc_list {
-  /* 圖片懸浮縮放 */
-}
-.projects .sc_list .sc_list_projects .item img {
+.projects .sc_list_projects .item img {
   width: 100%;
   display: block;
   transition: transform 0.3s ease;
 }
-.projects .sc_list .sc_list_projects .item:hover {
-  transform: scale(0.95);
-}
-.projects .sc_list .sc_list_projects .item:hover {
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-.projects .sc_list .sc_list_breadcrumb {
-  margin: 12px 0;
-  font-weight: bold;
-}
-.projects .sc_list .sc_list_breadcrumb span {
-  pointer-events: none;
-}
-.projects .sc_list .sc_list_dropdown {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 12px;
+
+@media (max-width: 768px) {
+  .projects {
+    margin-top: 0vh;
+  }
+  .projects .sc_list {
+    padding: 48px 0;
+  }
+  .projects .sc_list .sticky {
+    top: 10px;
+  }
+  .projects .sc_list_projects {
+    -moz-column-count: 2;
+         column-count: 2;
+  }
+  .projects .sc_list_breadcrumb {
+    margin-bottom: 20px;
+  }
 }/*# sourceMappingURL=all.min.css.map */
