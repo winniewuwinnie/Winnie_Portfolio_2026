@@ -447,6 +447,10 @@ header .kv .bg .solid_4 {
   left: 65%;
 }
 
+.main.index {
+  overflow: hidden;
+}
+
 .sc_aboutMe {
   position: relative;
   z-index: 1;
