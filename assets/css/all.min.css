@@ -156,6 +156,7 @@ p {
 
 .wrap {
   font-family: "Manrope", "Noto Sans TC", "Microsoft Jhenghei", "微軟正黑", sans-serif;
+  overflow: hidden;
   background-color: #fff;
 }
 
